@@ -8,10 +8,6 @@ from django.db.models import Count, QuerySet
 def index(request):
     return render(request, 'index.html')
 
-def get_buses(request):
-    return render(request, )
-
-
 
 def get_buses(request):
     table = BusTable(Bus.objects.annotate(number_of_routes=Count('routes')))
